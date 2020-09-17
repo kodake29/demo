@@ -1,2 +1,17 @@
 <h1>Members#show</h1>
-<p>Find me in app/views/members/show.html.erb</p>
+<p>マイページ</p>
+<%= link_to '編集する', edit_members_path(@member.id) %>
+
+<%= @member.last_name %>
+<%= @member.first_name%>
+<%= @member.kana_last_name %>
+<%= @member.kana_first_name %>
+<%= @member.postal_code %>
+<%= @member.address %>
+<%= @member.phone %>
+<%= @member.email %>
+
+
+
+<li><%= link_to ' log out', destroy_member_session_path, method: :delete %></li>
+<p>注文履歴</p>

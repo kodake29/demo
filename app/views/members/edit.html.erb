@@ -1,2 +1,40 @@
 <h1>Members#edit</h1>
 <p>Find me in app/views/members/edit.html.erb</p>
+
+
+    <h2>登録情報編集</h2>
+
+
+<%= form_with(model: @customer, local: true) do |f| %>
+
+        <h5><%= f.label :名前 %></h5>
+        <span>
+          (姓)<%= f.text_field :last_name %>
+        </span>
+        <span style='display: inline-block;'>
+          (名)<%= f.text_field :first_name %>
+        </span>
+
+        <h5><%= f.label :フリガナ %></h5>
+        <span style='display: inline-block;'>
+          (セイ)<%= f.text_field :kana_last_name%>
+        </span>
+        <span style='display: inline-block;'>
+          (メイ)<%= f.text_field :kana_first_name%>
+        </span>
+
+        <h5><%= f.label :Eメール %></h5>
+        <%= f.text_field :email %>
+
+        <h5><%= f.label :郵便番号（ハイフンなし） %></h5>
+        <%= f.text_field :postal_code %>
+
+        <h5><%= f.label :住所 %></h5>
+        <%= f.text_field :address %>
+
+        <h5><%= f.label :電話番号（ハイフンなし） %></h5>
+        <%= f.text_field :phone %>
+
+        <%= f.submit '編集内容を保存する', class:'btn btn-danger' %>
+        <%= link_to '退会する'%>
+    <% end %>
